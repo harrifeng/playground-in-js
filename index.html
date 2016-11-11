@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <table id="myTable" class="table table-bordered" >
+            <thead>
+                <tr>
+                    <th>My Header</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>One old Line</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button id ="myButton">Add one element</button>
+
+        <script>
+
+         function addNewRow(elem, table, text) {
+             elem.addEventListener("click", function() {
+                 var newRow = table.insertRow(table.rows.length);
+                 var newCell = newRow.insertCell(0);
+                 newCell.appendChild(document.createTextNode(text));
+             });
+         }
+
+
+         var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+         var button = document.getElementById('myButton');
+
+         addNewRow(button, tableRef, 'Another new row');
+        </script>
+    </body>
+</html>
