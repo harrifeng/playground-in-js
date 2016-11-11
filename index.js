@@ -1,13 +1,17 @@
 var express = require("express");
 var app = express();
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({extended: false}));
 
 /* serves main page */
 app.get("/", function(req, res) {
     res.sendfile('index.html');
 });
 
-app.post("/user/add", function(req, res) {
+app.post("/test", function(req, res) {
     /* some server side logic */
+    console.log(req.body.name);
     res.send("OK");
 });
 

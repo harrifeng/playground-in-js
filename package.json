@@ -1,0 +1,22 @@
+{
+  "name": "playground-in-js",
+  "version": "1.0.0",
+  "description": "Playground code in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harrifeng/playground-in-js.git"
+  },
+  "author": "harri feng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harrifeng/playground-in-js/issues"
+  },
+  "homepage": "https://github.com/harrifeng/playground-in-js#readme",
+  "dependencies": {
+    "connect": "^3.5.0"
+  }
+}
