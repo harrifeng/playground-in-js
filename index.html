@@ -21,12 +21,22 @@
         <button id ="myButton">Add one element</button>
 
 
-        <form action="/test" method="post">
+        <form action="/test" method="post" id="myForm">
             <input type="text" name="name" value="Mick">
             <input type="submit" value="Submit">
         </form>
 
+        <button id ="addInput">Add one Input</button>
+
         <script>
+         function addNewInput(elem, form, input_name, input_value) {
+             elem.addEventListener("click", function() {
+                 var newDiv = document.createElement('div');
+                 newDiv.innerHTML = "<br><input type='text' name='hfeng'>";
+                 form.appendChild(newDiv);
+             });
+
+         }
 
          function addNewRow(elem, table, text) {
              elem.addEventListener("click", function() {
@@ -39,8 +49,12 @@
 
          var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
          var button = document.getElementById('myButton');
-
          addNewRow(button, tableRef, 'Another new row');
+
+         var formRef = document.getElementById('myForm');
+         var button2 = document.getElementById('addInput');
+
+         addNewInput(button2, formRef, 'hello', 'world');
         </script>
     </body>
 </html>
