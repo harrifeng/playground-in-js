@@ -5,24 +5,12 @@
         <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     </head>
     <body>
-        <table id="myTable" class="table table-bordered" >
-            <thead>
-                <tr>
-                    <th>My Header</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>One old Line</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <button id ="myButton">Add one element</button>
-
-
-        <form action="/test" method="post" id="myForm">
-            <input type="text" name="name" value="Mick">
+        <form action="/test" method="post">
+            <div id="myForm">
+                <div>
+                    <input type="text" name="name" value="Mick">
+                </div>
+            </div>
             <input type="submit" value="Submit">
         </form>
 
@@ -32,29 +20,16 @@
          function addNewInput(elem, form, input_name, input_value) {
              elem.addEventListener("click", function() {
                  var newDiv = document.createElement('div');
-                 newDiv.innerHTML = "<br><input type='text' name='hfeng'>";
+                 newDiv.innerHTML = "<br><input type='text' name='" + input_name +"'>";
                  form.appendChild(newDiv);
              });
 
          }
 
-         function addNewRow(elem, table, text) {
-             elem.addEventListener("click", function() {
-                 var newRow = table.insertRow(table.rows.length);
-                 var newCell = newRow.insertCell(0);
-                 newCell.appendChild(document.createTextNode(text));
-             });
-         }
-
-
-         var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
-         var button = document.getElementById('myButton');
-         addNewRow(button, tableRef, 'Another new row');
-
          var formRef = document.getElementById('myForm');
-         var button2 = document.getElementById('addInput');
+         var btnRef = document.getElementById('addInput');
 
-         addNewInput(button2, formRef, 'hello', 'world');
+         addNewInput(btnRef, formRef, 'hello', 'world');
         </script>
     </body>
 </html>

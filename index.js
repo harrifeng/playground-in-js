@@ -12,8 +12,7 @@ app.get("/", function(req, res) {
 app.post("/test", function(req, res) {
     /* some server side logic */
     console.log(req.body.name);
-    console.log(req.body.hfeng);
-    res.send("OK");
+    res.send("content is: " + req.body.hello);
 });
 
 /* serves all the static files */
