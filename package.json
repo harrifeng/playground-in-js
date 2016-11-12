@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/harrifeng/playground-in-js#readme",
   "dependencies": {
-    "connect": "^3.5.0"
+    "body-parser": "^1.15.2",
+    "connect": "^3.5.0",
+    "express": "^4.14.0"
   }
 }
